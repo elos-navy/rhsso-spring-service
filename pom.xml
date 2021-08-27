@@ -56,13 +56,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${springboot-version}</version>
         </dependency>
-
         <!-- KeyCloak -->
-        <!-- <dependency>
+        <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-spring-boot-starter</artifactId>
         </dependency>
-         -->
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.json</artifactId>
