@@ -84,8 +84,8 @@ Access the Quickstart
 
 The endpoints for the service are:
 
-* public - <http://localhost:8081/public>
-* secured - <http://localhost:8081/products>
+* public - <http://localhost:8080/public>
+* secured - <http://localhost:8080/products>
 
 
 You can open the public endpoint directly in the browser to test the service. The other endpoint require
@@ -95,6 +95,14 @@ invoking with a bearer token. To invoke these endpoints use one of the example q
 * [app-jee-html5](../app-jee-html5/README.md) - HTML5 application that invokes the example service. Requires service example to be deployed.
 * [app-jee-jsp](../app-jee-jsp/README.md) - JSP application packaged that invokes the example service. Requires service example to be deployed.
 
+   ````
+    export access_token=$(\
+        curl -X POST http://<SSO Server URL>:8080/auth/realms/service-springboot/protocol/openid-connect/token \
+        -H 'Authorization: Basic YXBwLWF1dGh6LXJlc3Qtc3ByaW5nYm9vdDpzZWNyZXQ=' \
+        -H 'content-type: application/x-www-form-urlencoded' \
+        -d 'username=userXX&password=<password>&grant_type=password' | jq --raw-output '.access_token' \
+     )
+   ````
 Integration test of the Quickstart
 ----------------------------------
 
